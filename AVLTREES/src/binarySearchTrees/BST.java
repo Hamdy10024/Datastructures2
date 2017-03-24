@@ -17,6 +17,11 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
   
   @Override
   public void insert(T key) {
+    if (root == null) {
+      root = new Node<T>(key);
+      nodes = 1;
+      return ;
+    }
     INode<T> current = root;
     INode<T> parent = null;
     while (current != null) {
@@ -42,6 +47,7 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
       height = Math.max(height, rightVal);
       height = Math.max(height, leftVal);
       current.setHeight(height);
+      current = current.getParent();
     }
   }
 
@@ -51,9 +57,9 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     if ( todelete == null) {
       return false;
     }
-    BST<T> tempTree = new BST<T>(todelete.getLeftChild());
+    BST<T> tempTree = new BST<T>(todelete.getRightChild());
     INode<T> inst = tempTree.popMin();
-    todelete.pushLeft(tempTree.getRoot());
+    todelete.pushRight(tempTree.getRoot());
     todelete.setValue(inst.getValue());
     return true;
   }
