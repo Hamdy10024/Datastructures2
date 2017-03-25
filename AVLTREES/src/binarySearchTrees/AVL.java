@@ -59,10 +59,6 @@ public class AVL<T extends Comparable<T>> extends BST<T> implements AVLTree<T> {
         this.updateHeight(temp);
     }
 
-//    @Override
-//    public void insert(T key) {
-//        return super.insert(key);
-//    }
 
     private void rebalance(INode<T> node) {
         while (node != null) {
@@ -82,8 +78,7 @@ public class AVL<T extends Comparable<T>> extends BST<T> implements AVLTree<T> {
 
     @Override
     public void insert(T key) {
-      // TODO Auto-generated method stub
-      return ;
+        this.rebalance(super.insertNode(key));
     }
 
 
