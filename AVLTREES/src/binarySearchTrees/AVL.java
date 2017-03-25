@@ -80,6 +80,12 @@ public class AVL<T extends Comparable<T>> extends BST<T> implements AVLTree<T> {
         }
     }
 
+    @Override
+    public void insert(T key) {
+      // TODO Auto-generated method stub
+      return ;
+    }
+
 
 }
 

@@ -12,7 +12,7 @@ public interface AVLTree<T extends Comparable<T>> {
      * @param key the value to be inserted in the tree
      */
 
-    INode<T> insert(T key);
+    void insert(T key);
 
     /**
      * Delete the key (if exists)

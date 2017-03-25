@@ -16,7 +16,7 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     }
 
     @Override
-    public INode<T> insert(T key) {
+    public INode<T> insertNode(T key) {
         if (root == null) {
             root = new Node<>(key);
             nodes = 1;

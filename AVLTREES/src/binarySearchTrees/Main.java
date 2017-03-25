@@ -3,11 +3,11 @@ package binarySearchTrees;
 public class Main {
     public static void main(String[] args) {
         BST<Integer> tre = new BST<>();
-        tre.insert(4);
-        tre.insert(8);
-        tre.insert(5);
-        tre.insert(0);
-        tre.insert(3);
+        tre.insertNode(4);
+        tre.insertNode(8);
+        tre.insertNode(5);
+        tre.insertNode(0);
+        tre.insertNode(3);
         INode<Integer> test;
         // test = (Node<Integer>) test.getRightChild();
         // test = (Node<Integer>) test.getRightChild();
