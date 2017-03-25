@@ -6,7 +6,7 @@ public interface BinaryTree<T extends Comparable<T>> {
      *
      * @param key the value to be inserted in the tree
      */
-    void insert(T key);
+    INode<T> insert(T key);
 
     /**
      * Delete the key (if exists).
