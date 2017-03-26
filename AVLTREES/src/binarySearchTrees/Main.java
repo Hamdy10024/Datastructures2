@@ -1,25 +1,23 @@
 package binarySearchTrees;
 
+import static org.junit.Assert.assertTrue;
+
 public class Main {
     public static void main(String[] args) {
-        BST<Integer> tre = new BST<>();
-        tre.insertNode(4);
-        tre.insertNode(8);
-        tre.insertNode(5);
-        tre.insertNode(0);
-        tre.insertNode(3);
-        INode<Integer> test;
-        // test = (Node<Integer>) test.getRightChild();
-        // test = (Node<Integer>) test.getRightChild();
-        //test = tre.popMin();
-        // System.out.println(test.getValue());
-        tre.delete(4);
-        test = tre.getRoot();
+      Dictionary t = new Dictionary();
+      t.insert("Test");
+      t.insert("Bag");
+      t.insert("Apple");
 
-        test = test.getLeftChild();
-        test = test.getRightChild();
-        System.out.println(test.getValue());
+      t.insert("Abigapple");
 
+      t.insert("Aaaaapple");
+
+      t.insert("Zolopple");
+      t.insert("Zzolopple");
+      System.out.println(t.exists("Zolopples"));
+      System.out.println(t.exists("Aaaaapple"));
+      System.out.println(t.exists("Abigapple"));
     }
 
 }

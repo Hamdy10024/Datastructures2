@@ -64,6 +64,14 @@ public interface INode<T extends Comparable<T>> {
      */
     void pushLeft(INode<T> leftChild);
 
+
+    /**
+     * adds  child to node.
+     *
+     * @param Child represented as INode.
+     */
+    void push(INode<T> Child);
+
     /**
      * adds right child to node.
      *
