@@ -13,6 +13,12 @@ public class Dictionary implements IDictionary {
     
   }
 
+  public Dictionary(String string) throws FileNotFoundException  {
+
+    data = new AVL<String>();
+    load(new File(string));
+  }
+
   @Override
   public void load(File file) throws FileNotFoundException {
     Scanner input = new Scanner(file);
@@ -25,8 +31,9 @@ public class Dictionary implements IDictionary {
 
   @Override
   public boolean insert(String word) {
-    if(data.search(word))
+    if (data.search(word)) {
       return false;
+    }
     data.insert(word);
     return true;
   }

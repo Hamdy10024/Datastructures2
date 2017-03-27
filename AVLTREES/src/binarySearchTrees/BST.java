@@ -34,6 +34,9 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     if (key == null) {
       throw new IllegalArgumentException("can not insert null");
     }
+    if (find(key) != null) {
+      return null;
+    }
     if (root == null) {
       root = new Node<>(key);
       nodes = 1;
@@ -52,8 +55,9 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     }
 
     current = new Node<T>(key, parent);
-    //parent.push(current);
+    // parent.push(current);
     INode<T> toReturn = current;
+    nodes++;
     reheight(current);
     return toReturn;
   }
@@ -83,8 +87,14 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     } else {
       todelete.setValue(inst.getValue());
     }
+    nodes--;
     return true;
   }
+  /**
+   * finds a node and returns it.
+   * @param key key of the node.
+   * @return the node itself.
+   */
 
   public INode<T> find(T key) {
     if (key == null) {
@@ -150,19 +160,20 @@ public class BST<T extends Comparable<T>> implements BinaryTree<T> {
     }
     if (current == root) {
       INode<T> temp = current.getParent();
-      if (current.getRightChild() !=null) {
+      if (current.getRightChild() != null) {
         current.getRightChild().setParent(temp);
       }
       return current;
     }
-    if(current.getParent().getLeftChild() == current)
-    current.getParent().pushLeft(current.getRightChild());
+    if (current.getParent().getLeftChild() == current)
+      current.getParent().pushLeft(current.getRightChild());
     else
       current.getParent().pushRight(current.getRightChild());
-    
+
     reheight(current.getParent());
     return current;
   }
+
   public Node<T> popMax(INode<T> root) {
     if (root == null) {
       return null;
